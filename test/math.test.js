@@ -9,4 +9,9 @@ describe('Testing math', () => {
       .should.equal(10);
   });
 
+  it('should return 10', () => {
+    math.div(20, 2)
+      .should.equal(10);
+  });
+
 });
