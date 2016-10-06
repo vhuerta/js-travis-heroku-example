@@ -5,7 +5,10 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha -b"
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha -b",
+    "clean": "rm -rf build && mkdir build",
+    "build": "./node_modules/.bin/babel src -d build",
+    "start": "npm run clean && npm run build && node ./build/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +28,8 @@
   "dependencies": {
     "babel-cli": "^6.16.0",
     "babel-preset-node5": "^11.1.0",
-    "babel-preset-node6": "^11.0.0"
+    "babel-preset-node6": "^11.0.0",
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "mocha": "^3.1.0",
