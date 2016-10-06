@@ -3,6 +3,10 @@ import math from './math';
 
 let app = express();
 
+app.get('/', (req, res, next) => {
+  res.json({hola: 'mundo'});
+});
+
 app.get('/:param1/:param2', (req, res, next) => {
   let result = math.sum(req.params.param1, req.params.param2);
   res.json({ result });
